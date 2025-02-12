@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        "san-valentin": "url('/background-san-valentin.jpg')",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
