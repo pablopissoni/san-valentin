@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 interface FormResend {
   message: string;
@@ -16,7 +16,7 @@ export const useFormResend = () => {
     email: "",
   });
 
-  const handleChangeInput = (e: any) => {
+  const handleChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormResend({ ...formResend, [name]: value });
   };
