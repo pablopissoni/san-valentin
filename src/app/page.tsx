@@ -1,3 +1,5 @@
+import { YesNoButton } from "@/components/ui/YesNoButton";
+
 interface Props {
   searchParams: Promise<{
     mail: string;
@@ -9,6 +11,8 @@ interface Props {
 
 export default async function HomePage({ searchParams }: Props) {
   const sParams = await searchParams;
+  sParams.text = sParams.text || "Que extraño, deberia haber una pregunta aqui...";
+
   console.log("🚀 ~ HomePage ~ searchParams:", sParams);
   return (
     <div>
@@ -17,18 +21,11 @@ export default async function HomePage({ searchParams }: Props) {
           <h1 className="text-4xl mt-10 mb-8">¡Feliz San Valentín! ❤️</h1>
 
           {/* Contenedor con mensaje personalizado con opciones de SI/NO */}
-          <section className="bg-slate-50 text-black text-center rounded-lg shadow-2xl p-4">
+          <section className="bg-slate-50 text-black text-center rounded-xl shadow-2xl p-4">
             <h2 className="text-4xl">{sParams.text}</h2>
 
             {/* Botones SI/NO para enviar mensaje personalizado */}
-            <div className="flex space-x-4 mt-4 justify-center">
-              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded-lg hover:shadow-xl">
-                SI
-              </button>
-              <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-4 rounded-lg hover:shadow-xl">
-                NO
-              </button>
-            </div>
+            <YesNoButton />
           </section>
 
           <h2></h2>
