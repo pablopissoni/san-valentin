@@ -1,5 +1,5 @@
 "use client";
-import { ChangeEvent, useState } from "react";
+import { useState } from "react";
 
 interface FormResend {
   message: string;
@@ -16,7 +16,8 @@ export const useFormResend = () => {
     email: "",
   });
 
-  const handleChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleChangeInput = (e: any) => {
     const { name, value } = e.target;
     setFormResend({ ...formResend, [name]: value });
   };

@@ -20,7 +20,7 @@ const useClickCounter = ({ maxClicks, to_email, fromName, toName, setShowShare }
     if (count === maxClicks) {
       setShowShare(true);
     }
-  }, [count, maxClicks, to_email, fromName, toName]);
+  }, [count, maxClicks, to_email, fromName, toName, setShowShare]);
 
   const increment = () => {
     if (count < maxClicks) {
