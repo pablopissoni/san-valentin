@@ -32,7 +32,7 @@ const styleButton = [
   {
     yes: {
       style: "",
-      text: "Sí, pero por cansancio",
+      text: "...",
     },
     no: {
       style: "",
