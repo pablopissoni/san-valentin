@@ -24,6 +24,7 @@ export const YesNoButton = ({ recipientEmail, fromName, toName }: Props) => {
 
   return (
     <>
+      {/* Muestro boton SI/NO o el botón de compartir */}
       {!showShare ? (
         <div className="flex space-x-6 mt-4 justify-center">
           <button
@@ -40,6 +41,7 @@ export const YesNoButton = ({ recipientEmail, fromName, toName }: Props) => {
           </button>
         </div>
       ) : (
+        // Muestro botón de compartir
         <Link href="/forward">
           <p className="group inline-flex min-w-0 items-center gap-2 rounded bg-[#e91e63] px-6 py-2 mt-4 text-sm font-semibold text-white transition-all hover:shadow-lg hover:shadow-pink-500/40 active:scale-95 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
             Quieres intentar con otra persona?
@@ -56,11 +58,6 @@ export const YesNoButton = ({ recipientEmail, fromName, toName }: Props) => {
           </p>
         </Link>
       )}
-      {/* solo informativo */}
-      <div className="flex justify-center gap-3">
-        <p>Clicks: {count}</p>
-        <p>styleButton.length: {styleButton.length}</p>
-      </div>
     </>
   );
 };
