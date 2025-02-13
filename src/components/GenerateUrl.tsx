@@ -1,5 +1,5 @@
 "use client";
-import { usePathname } from "next/navigation";
+// import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 interface FormData {
@@ -14,12 +14,14 @@ interface Props {
 }
 
 export const GenerateUrl = ({ formData }: Props) => {
-  console.log("🚀 ~ GenerateUrl ~ formData:", formData);
-  const pathname = usePathname();
-  console.log("🚀 ~ GenerateUrl ~ pathname:", pathname);
-  const urlBase = window.location.origin;
+  console.log("🚀formData:", formData);
+  //   const pathname = usePathname();
+
+  const urlBase = process.env.NEXT_PUBLIC_URL_BASE;
+  console.log("🚀 ~ GenerateUrl ~ urlBase:", urlBase);
 
   const [searchParams, setSearchParams] = useState<string>("");
+  console.log("🚀 ~ GenerateUrl ~ searchParams:", searchParams);
   const [copied, setCopied] = useState(false);
 
   const generateUrl = (e: { preventDefault: () => void }) => {
