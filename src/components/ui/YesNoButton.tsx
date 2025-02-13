@@ -44,7 +44,8 @@ export const YesNoButton = ({ recipientEmail, fromName, toName }: Props) => {
         // Muestro botón de compartir
         <Link href="/forward">
           <p className="group inline-flex min-w-0 items-center gap-2 rounded bg-[#e91e63] px-6 py-2 mt-4 text-sm font-semibold text-white transition-all hover:shadow-lg hover:shadow-pink-500/40 active:scale-95 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-            Quieres intentar con otra persona?
+            <span>Genial, ya enviamos tu respuesta.</span>
+            ¿Quieres intentar con otra persona?
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
