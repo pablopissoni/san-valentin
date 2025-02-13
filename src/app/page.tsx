@@ -1,4 +1,5 @@
 import { YesNoButton } from "@/components/ui/YesNoButton";
+import Link from "next/link";
 interface Props {
   searchParams: Promise<{
     mail?: string;
@@ -39,9 +40,23 @@ export default async function HomePage({ searchParams }: Props) {
               toName={sParams.to}
             />
           ) : (
-            <p>
-              <i>Necesito el mail para enviar el correo</i>
-            </p>
+            <Link href="/forward">
+              <p className="group inline-flex min-w-0 items-center gap-2 rounded bg-[#e91e63] px-6 py-2 mt-4 text-sm font-semibold text-white transition-all hover:shadow-lg hover:shadow-pink-500/40 active:scale-95 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                <span>Necesito el mail para enviar el correo</span>
+                ¿Quieres crear una pregunta para compartir?
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="size-4 w-0 transition-all group-hover:w-4"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
+              </p>
+              <i></i>
+            </Link>
           )}
         </section>
       </section>
