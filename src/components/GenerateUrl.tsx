@@ -25,10 +25,10 @@ export const GenerateUrl = ({ formData }: Props) => {
   const generateUrl = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     const search = new URLSearchParams({
-      mail: formData.message,
+      mail: formData.email,
       from: formData.fromUser,
       to: formData.toUser,
-      text: formData.email,
+      text: formData.message,
     });
     const url = urlBase + "?" + search.toString();
     navigator.clipboard.writeText(url);
